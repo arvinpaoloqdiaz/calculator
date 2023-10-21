@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Simple Calculator | Arvin Paolo Diaz</title>
+
+		<!-- External CSS -->
+		<link rel="stylesheet" type="text/css" href="./index.css">
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Montserrat:wght@700;900&family=Noto+Sans&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+	</head>
+	<body>
+		<div class="container-calc">
+			<div>
+				<h1>SIMPLE CALCULATOR</h1>
+			</div>
+			<div class="calculator">
+				<form>
+					<div class="screen">
+						<input type="text" name="display" readonly>
+					</div>
+					<div>
+						<input class="row-buttons" type="button" value="AC" onclick="display.value = ''">
+						<input class="row-buttons" type="button" value="&larr;" onclick="display.value = display.value.toString().slice(0,-1)">
+						<input class="row-buttons" type="button" value="&percnt;" onclick="display.value += '%'">
+						<input class="row-buttons" type="button" value="&divide;" onclick="display.value += '/'">
+					</div>
+
+					<div>
+						<input class="row-buttons" type="button" value="7" onclick="display.value += '7'">
+						<input class="row-buttons" type="button" value="8" onclick="display.value += '8'">
+						<input class="row-buttons" type="button" value="9" onclick="display.value += '9'">
+						<input class="row-buttons" type="button" value="&times;" onclick="display.value += '*'">
+					</div>
+					<div>
+						<input class="row-buttons" type="button" value="4" onclick="display.value += '4'">
+						<input class="row-buttons" type="button" value="5" onclick="display.value += '5'">
+						<input class="row-buttons" type="button" value="6" onclick="display.value += '6'">
+						<input class="row-buttons" type="button" value="&minus;" onclick="display.value += '-'">
+					</div>
+					<div>
+						<input class="row-buttons" type="button" value="1" onclick="display.value += '1'">
+						<input class="row-buttons" type="button" value="2" onclick="display.value += '2'">
+						<input class="row-buttons" type="button" value="3" onclick="display.value += '3'">
+						<input class="row-buttons" type="button" value="&plus;" onclick="display.value += '+'">
+					</div>
+					<div>
+						<input class="row-buttons" type="button" value="0" onclick="display.value += '0'">
+						<input class="row-buttons" type="button" value="&sdot;" onclick="display.value += '.'">
+						<input class="row-buttons" type="button" value="(" onclick="display.value += '('">
+						<input class="row-buttons" type="button" value=")" onclick="display.value += ')'">
+					</div>
+					<div>
+						<input class="row-buttons-equals" type="button" value="&equals;" onclick="display.value = eval(display.value)">
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</body>
+</html>
