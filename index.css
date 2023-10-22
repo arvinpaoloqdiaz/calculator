@@ -26,6 +26,35 @@ h1 {
 	align-items: center;
 	flex-direction: column;
 }
+.container{
+	display: flex;
+}
+.history h3 {
+	font-family: "Press Start 2P",sans-serif;
+	margin-bottom: 0;
+	color: rgba(255,255,255,0.8);
+	text-align: center;
+}
+.history .history-list{
+	width:300px;
+	height: 570px;
+	margin: 25px 50px 0 50px;
+	border-radius: 20px;
+	padding: 1rem;
+	background: rgba(255,255,255,0.5);
+	box-shadow: -3px -3px 10px white, 5px 5px 10px black;
+	border: none;
+	outline: none;
+	backdrop-filter: blur( 4px );
+	-webkit-backdrop-filter: blur( 4px );
+	overflow-y: scroll;
+	overflow-x: hidden;
+	-ms-overflow-style:none;
+	scrollbar-width: none;
+}
+.history-list::-webkit-scrollbar {
+	display: none;
+}
 .calculator {
 	width: 500px;
 	height: 650px;
@@ -90,4 +119,30 @@ h1 {
 .calculator form .row-buttons:active,.calculator form .row-buttons-equals:active{
 	box-shadow: none;
 	background: transparent;
+}
+.grid-template {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas:"accumulator accumulator" "equal-sign calculated";
+	font-family: "Chakra Petch",sans-serif;
+	font-size: 2.5vh;
+	padding: 0.5rem;
+	margin-bottom:1rem;
+}
+.grid-template:hover{
+	background:rgba(0,0,0,0.1);
+	border-radius: 10px;
+}
+.display {
+	grid-area:accumulator;
+	text-align: right;
+}
+.equal-sign-template{
+	grid-area:equal-sign;
+	text-align: left;
+}
+.answer{
+	grid-area:calculated;
+	text-align: right;
 }

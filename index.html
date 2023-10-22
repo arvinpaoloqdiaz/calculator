@@ -19,48 +19,54 @@
 			<div>
 				<h1>SIMPLE CALCULATOR</h1>
 			</div>
-			<div class="calculator">
-				<form>
-					<div class="screen">
-						<input type="text" name="display" readonly>
+			<div class="container">
+				<div class="calculator">
+					<form>
+						<div class="screen">
+							<input type="text" id="display" disabled>
+						</div>
+						<div>
+							<button class="row-buttons" id="clear-all">AC</button>
+							<button class="row-buttons" id="delete">&larr;</button>
+							<button class="row-buttons btn-oper" value="%">%</button>
+							<button class="row-buttons btn-oper" value="/">&divide;</button>
+						</div>
+						<div>
+							<button class="row-buttons btn-num">7</button>
+							<button class="row-buttons btn-num">8</button>
+							<button class="row-buttons btn-num">9</button>
+							<button class="row-buttons btn-oper" value="*">&times;</button>
+						</div>
+						<div>
+							<button class="row-buttons btn-num">4</button>
+							<button class="row-buttons btn-num">5</button>
+							<button class="row-buttons btn-num">6</button>
+							<button class="row-buttons btn-oper" value="-">&minus;</button>
+						</div>
+						<div>
+							<button class="row-buttons btn-num">1</button>
+							<button class="row-buttons btn-num">2</button>
+							<button class="row-buttons btn-num">3</button>
+							<button class="row-buttons btn-oper" value="+">&plus;</button>
+						</div>
+						<div>
+							<button class="row-buttons btn-num">0</button>
+							<button class="row-buttons btn-char">.</button>
+							<button class="row-buttons btn-char">(</button>
+							<button class="row-buttons btn-char">)</button>
+						</div>
+						<div>
+							<button class="row-buttons-equals" id="calculate">&equals;</button>
+						</div>
+					</form>
+				</div>
+				<div class="history">
+					<h3>History</h3>
+					<div class="history-list" id="history-list">
 					</div>
-					<div>
-						<input class="row-buttons" type="button" value="AC" onclick="display.value = ''">
-						<input class="row-buttons" type="button" value="&larr;" onclick="display.value = display.value.toString().slice(0,-1)">
-						<input class="row-buttons" type="button" value="&percnt;" onclick="display.value += '%'">
-						<input class="row-buttons" type="button" value="&divide;" onclick="display.value += '/'">
-					</div>
-
-					<div>
-						<input class="row-buttons" type="button" value="7" onclick="display.value += '7'">
-						<input class="row-buttons" type="button" value="8" onclick="display.value += '8'">
-						<input class="row-buttons" type="button" value="9" onclick="display.value += '9'">
-						<input class="row-buttons" type="button" value="&times;" onclick="display.value += '*'">
-					</div>
-					<div>
-						<input class="row-buttons" type="button" value="4" onclick="display.value += '4'">
-						<input class="row-buttons" type="button" value="5" onclick="display.value += '5'">
-						<input class="row-buttons" type="button" value="6" onclick="display.value += '6'">
-						<input class="row-buttons" type="button" value="&minus;" onclick="display.value += '-'">
-					</div>
-					<div>
-						<input class="row-buttons" type="button" value="1" onclick="display.value += '1'">
-						<input class="row-buttons" type="button" value="2" onclick="display.value += '2'">
-						<input class="row-buttons" type="button" value="3" onclick="display.value += '3'">
-						<input class="row-buttons" type="button" value="&plus;" onclick="display.value += '+'">
-					</div>
-					<div>
-						<input class="row-buttons" type="button" value="0" onclick="display.value += '0'">
-						<input class="row-buttons" type="button" value="&sdot;" onclick="display.value += '.'">
-						<input class="row-buttons" type="button" value="(" onclick="display.value += '('">
-						<input class="row-buttons" type="button" value=")" onclick="display.value += ')'">
-					</div>
-					<div>
-						<input class="row-buttons-equals" type="button" value="&equals;" onclick="display.value = eval(display.value)">
-					</div>
-				</form>
+				</div>
 			</div>
 		</div>
-
+		<script type="text/javascript" src="./index.js"></script>
 	</body>
 </html>
