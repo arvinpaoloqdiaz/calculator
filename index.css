@@ -1,48 +1,141 @@
+/* CSS Reset */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
+
+/* CSS Custom Variables */
 :root {
 	--size:70px;
 	--msize:6px;
+	--white-shadow: rgba(255,255,255,0.5);
+	--black-shadow: rgba(0,0,0,0.5);
 }
-h1 {
-	font-family: "Press Start 2P",sans-serif;
-	margin-bottom: 10vh;
-	color: rgba(255,255,255,0.8);
-	-webkit-text-stroke: 1px black;
-}
-.container-calc {
-	width: 100%;
-	height: 100vh;
-/*	background: linear-gradient(135deg, rgba(241,255,0,1), rgba(20,255,62,1), rgba(0,255,235,1));*/
+
+/* Fixed Background */
+body {
 	background: url(./images/background.jpg);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+	background-attachment: fixed;
 }
-.container{
-	display: flex;
-}
-.history h3 {
+
+/* Title Simple Calculator */
+.content > div> h1 {
+	margin:2rem;
+	text-align: center;
 	font-family: "Press Start 2P",sans-serif;
-	margin-bottom: 0;
+	color: white;
+	-webkit-text-stroke: 1px black;
+	font-size: 2rem;
+}
+
+/* Container of Calculator and  History Section */
+.container{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.container > *{
+	margin:0 2rem 4rem 2rem;
+}
+
+/* CALCULATOR */
+
+/* Calculator Container */
+.calculator {
+	font-family: "Chakra Petch",sans-serif;
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 20px;
+	box-shadow: -3px -3px 10px var(--white-shadow), 5px 5px 10px var(--black-shadow);
+	backdrop-filter: blur( 4px );
+	-webkit-backdrop-filter: blur( 4px );
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	padding: 1.5rem;
+}
+
+/* Children of Calculator Container */
+.calculator * {
+	font-family: "Chakra Petch",sans-serif;
+}
+
+/*  Calculator Screen */
+.screen {
+	margin-bottom: 1rem;
+}
+
+/* Calculator Screen Input */
+.screen > input {
+	width: 100%;
+	border: none;
+	outline: none;
+	text-align: right;
+	border-radius: 10px;
+	background: rgba(255,255,255,0.1);
+	font-size: 2rem;
+	padding: 0 5%;
+	color: white;
+}
+
+/* Calculator Buttons */
+.calculator .row-buttons {
+	border:0;
+	outline: 0;
+	width: var(--size);
+	height: var(--size);
+	margin: var(--msize);
+	border-radius: 10px;
+	color: white;
+	background: rgba(128,128,128,0.3);
+	box-shadow: -3px -3px 10px var(--white-shadow), 5px 5px 10px black;
+	font-size: 2rem;
+	
+}
+
+/* Calculator Equal button */
+.calculator .row-buttons-equals {
+	border:0;
+	outline: 0;
+	width: calc(4*var(--size) + 8*var(--msize));
+	height: var(--size);
+	margin: var(--msize);
+	border-radius: 10px;
+	color:white;
+	background: rgba(128,128,128,0.3);
+	box-shadow: -3px -3px 10px var(--white-shadow), 5px 5px 10px black;
+	font-size: 2rem;
+}
+
+/* Calculator buttons pseudo-class hover */
+.calculator .row-buttons:hover,.calculator .row-buttons-equals:hover{
+	font-weight: bold;
+}
+
+/* Calculator buttons pseudo-class active */
+.calculator .row-buttons:active,.calculator .row-buttons-equals:active{
+	box-shadow: -3px -3px 10px var(--white-shadow), inset 2px 2px 10px var(--black-shadow),5px 5px 10px var(--black-shadow);
+}
+
+/* HISTORY SECTION */
+/* History Title */
+.history > .history-list > h3 {
+	font-family: "Press Start 2P",sans-serif;
+	margin: 0.2rem 4rem 1rem 4rem;
 	color: rgba(255,255,255,0.8);
 	text-align: center;
 }
-.history .history-list{
-	width:300px;
-	height: 570px;
-	margin: 25px 50px 0 50px;
+
+/* History Section container */
+.history > .history-list{
+	min-height:600px;
 	border-radius: 20px;
 	padding: 1rem;
-	background: rgba(255,255,255,0.5);
-	box-shadow: -3px -3px 10px white, 5px 5px 10px black;
+	background: rgba(255,255,255,0.3);
+	box-shadow: -3px -3px 5px var(--white-shadow), 5px 5px 10px var(--black-shadow);
 	border: none;
 	outline: none;
 	backdrop-filter: blur( 4px );
@@ -52,74 +145,13 @@ h1 {
 	-ms-overflow-style:none;
 	scrollbar-width: none;
 }
+
+/* History container scrollbar */
 .history-list::-webkit-scrollbar {
 	display: none;
 }
-.calculator {
-	width: 500px;
-	height: 650px;
-	background: rgba(0, 0, 0, 0.3);
-	border-radius: 20px;
-	box-shadow: -3px -3px 10px white, 5px 5px 10px black;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	backdrop-filter: blur( 4px );
-	-webkit-backdrop-filter: blur( 4px );
-}
-.screen	{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-bottom:5%;
-}
-.screen input {
-	width: 100%;
-	height: 6vh;
-	border: none;
-	outline: none;
-	text-align: right;
-	border-radius: 10px;
-	background: rgba(255,255,255,0.5);
-	font-family: "Chakra Petch",sans-serif;
-	font-size: 3vh;
-	padding: 0 5%;
-}
 
-.calculator form .row-buttons {
-	border:0;
-	outline: 0;
-	width: var(--size);
-	height: var(--size);
-	margin: var(--msize);
-	border-radius: 10px;
-	color: white;
-	background: rgba(128,128,128,0.3);
-	box-shadow: -3px -3px 10px white, 5px 5px 10px black;
-	font-family: "Chakra Petch",sans-serif;
-	font-size: 2rem;
-	
-}
-.calculator form .row-buttons-equals {
-	border:0;
-	outline: 0;
-	width: calc(4*var(--size) + 8*var(--msize));
-	height: var(--size);
-	margin: var(--msize);
-	border-radius: 10px;
-	color:white;
-	background: rgba(128,128,128,0.3);
-	box-shadow: -3px -3px 10px white, 5px 5px 10px black;
-	font-family: "Chakra Petch",sans-serif;
-	font-size: 2rem;
-}
-.calculator form .row-buttons:hover,.calculator form .row-buttons-equals:hover{
-	box-shadow: -3px -3px 10px white;
-}
-.calculator form .row-buttons:active,.calculator form .row-buttons-equals:active{
-	box-shadow: none;
-	background: transparent;
-}
+/* History List Section JS Script */
 .grid-template {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -127,8 +159,8 @@ h1 {
 	grid-template-areas:"accumulator accumulator" "equal-sign calculated";
 	font-family: "Chakra Petch",sans-serif;
 	font-size: 2.5vh;
-	padding: 0.5rem;
-	margin-bottom:1rem;
+	padding:0.5rem;
+	margin:0;
 }
 .grid-template:hover{
 	background:rgba(0,0,0,0.1);
@@ -145,4 +177,28 @@ h1 {
 .answer{
 	grid-area:calculated;
 	text-align: right;
+}
+
+/* FOOTER SECTION */
+footer {
+	font-family: "Noto Sans", sans-serif;
+	color:white;
+	width:100%;
+	position: fixed;
+	bottom:0;
+	text-align: center;
+	margin: 1rem;
+}
+
+/* Media Queries */
+@media only screen and (max-width:576px) {
+	.temp{
+		display: none;
+	}
+	.calculator{
+		background: transparent;
+		box-shadow:none;
+		backdrop-filter: none;
+		-webkit-backdrop-filter: none;
+	}
 }

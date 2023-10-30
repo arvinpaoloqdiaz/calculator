@@ -79,7 +79,7 @@ calculate.addEventListener("click",(e)=>{
 function addHistory(expr,ans){
 	let historyList = document.getElementById("history-list")
 	let newDiv = document.createElement("div");
-	newDiv.classList.add("grid-template","btn-hist");
+	newDiv.classList.add("grid-template");
 	let newPAcc = document.createElement("p")
 	newPAcc.classList.add("display","acc")
 	newPAcc.textContent= expr.toString();
