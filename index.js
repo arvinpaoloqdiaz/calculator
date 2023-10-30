@@ -4,6 +4,7 @@ let buttonNumbers = document.querySelectorAll(".btn-num");
 let buttonOperators = document.querySelectorAll(".btn-oper");
 let buttonChars = document.querySelectorAll(".btn-char");
 let buttonHistories = document.querySelectorAll("btn-hist");
+let calculator = document.getElementById("calcu");
 let screen = document.getElementById("display");
 let clearAll = document.getElementById("clear-all");
 let deleteChar = document.getElementById("delete");
@@ -100,6 +101,7 @@ function addHistory(expr,ans){
 		screen.value = expr;
 		accumulator= decode(expr);
 		console.log(accumulator);
+		calculator.scrollIntoView({behavior:"smooth"});
 	});
 };
 
