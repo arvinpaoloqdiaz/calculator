@@ -43,7 +43,7 @@ This section will briefly discuss some code blocks in the HTML, CSS, and JavaScr
 <details>
 <summary>HTML</summary>
 	
-### [index.html](./index.html)
+### [calculator/index.html](./index.html)
 
 **CSS** and **JS** files are linked externally:
 
@@ -106,7 +106,7 @@ Lastly, a *footer* element was added after the outermost *div* to serve as the f
 	
 <summary>CSS</summary>
 
-### [index.css](./index.css)
+### [calculator/index.css](./index.css)
 Not all CSS properties will be shown, only important points in the code.
 
 A CSS reset was initialized to ensure that there are no unneccessary margins or paddings.
@@ -171,7 +171,7 @@ The `.grid-template` class is the container of each of the history entries. It s
 <details>
 <summary>JavaScript</summary>
 	
-### [index.js](./index.js)
+### [calculator/index.js](./index.js)
 
 Majority of the JavaScript code used is **HTML DOM**.
 
