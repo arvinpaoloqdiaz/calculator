@@ -43,7 +43,7 @@ This section will briefly discuss some code blocks in the HTML, CSS, and JavaScr
 <details>
 <summary>HTML</summary>
 	
-### index.html
+### [index.html](./index.html)
 
 **CSS** and **JS** files are linked externally:
 
@@ -106,7 +106,7 @@ Lastly, a *footer* element was added after the outermost *div* to serve as the f
 	
 <summary>CSS</summary>
 
-### index.css
+### [index.css](./index.css)
 Not all CSS properties will be shown, only important points in the code.
 
 A CSS reset was initialized to ensure that there are no unneccessary margins or paddings.
@@ -171,7 +171,7 @@ The `.grid-template` class is the container of each of the history entries. It s
 <details>
 <summary>JavaScript</summary>
 	
-### index.js
+### [index.js](./index.js)
 
 Majority of the JavaScript code used is **HTML DOM**.
 
@@ -249,7 +249,7 @@ function addHistory(expr,ans){
 	});
 };
 ```
-The `addHistory()` function appends the following code block as a childred of the `<div class="history-list">`.
+The `addHistory()` function appends the following code block as a children of the `<div class="history-list">`.
 ```html
 <div class="grid-template">
 	<p class="display acc">expr.toString()</p>
@@ -282,8 +282,6 @@ let decoder = new Map([
  };
 ```
 When the `decode()` funtion is not invoked on the accumulator, it will return an error since `eval()` function does not recognize special html characters like &plus;, &minus;, &times;, and &divide; so it needs to be converted to operations recognized by JavaScript through the use of `map()` method.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 </details>
 
