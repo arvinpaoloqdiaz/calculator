@@ -1,5 +1,8 @@
+
+<a name="readme-top"></a>
+
 # Simple Calculator
-This is a static webpage containing a simple calculator using purely `HTML`, `CSS`, and `JavaScript`.
+This is a static webpage containing a [Simple Calculator](https://arvinpaoloqdiaz.github.io/calculator/) using purely `HTML`, `CSS`, and `JavaScript`.
 
 There are two sections, the **Calculator** section, and the **History** section which will be collectively called the ***Main Content***.
 
@@ -13,10 +16,14 @@ The Calculator section works just like a calculator with the exception of the **
 
 Usually, this is a percentage operation, but in this case, we use the % operator for ***modulo operations***.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## History Section
 The History section stores the expression as well as the answer when the ***equal (=)*** button is clicked. 
 
 When the history section is clicked, the clicked expression will be called back to the screen and can be edited for another operation.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Responsiveness
 The whole webpage is responsive to small, medium, and large screens
@@ -28,6 +35,8 @@ When the screen is medium and large, the calculator and history sections are inl
 When the screen is small, the calculator is above the history section.
 
 The container for the calculator also becomes transparent and when you click an expression in the history section, it will scroll up back to the calculator section.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Code Discussion
 This section will briefly discuss some code blocks in the HTML, CSS, and JavaScript files respectively.
@@ -88,6 +97,9 @@ A sample code block of one of the row button divs is shown below as well as the 
 ```
 
 Lastly, a *footer* element was added after the outermost *div* to serve as the footer of the webpage.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 </details>
 
 <details>
@@ -151,6 +163,8 @@ The `.grid-template` class is the container of each of the history entries. It s
 `.equal-sign-template` class is just an equal sign at the left side of the second row of each history entry.
 
 `.answer` class is where the answer to the expression will be displayed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 </details>
 
@@ -235,7 +249,70 @@ function addHistory(expr,ans){
 	});
 };
 ```
+The `addHistory()` function appends the following code block as a childred of the `<div class="history-list">`.
+```html
+<div class="grid-template">
+	<p class="display acc">expr.toString()</p>
+	<p class="equal-sign-template">=</p>
+	<p class="answer">ans.toString()</p>
+</div>
+```
+An event listener is also created per appended code block that listens for a click that will call the expression to the display screen. For a smaller screen, the screen will auto-scroll to the display screen of the calculator when a history entry is clicked.
+```js
+newDiv.addEventListener("click",(e) => {
+	e.preventDefault();
+	screen.value = expr;
+	accumulator= decode(expr);
+	console.log(accumulator);
+	calculator.scrollIntoView({behavior:"smooth"});
+```
+As can be seen in the code block above, a `decode()` function is invoked and stored in the accumulator. The decode function can be seen below.
+```js
+let decoder = new Map([
+	["+","+"],
+	["−", "-"],
+	["×","*"],
+	["÷","/"]
+]);
+ function decode(expr){
+ 	let exprArray = Array.from(expr);
+ 	return exprArray.map(character =>{
+ 		return decoder.get(character) || character;
+ 	}).join("");
+ };
+```
+When the `decode()` funtion is not invoked on the accumulator, it will return an error since `eval()` function does not recognize special html characters like &plus;, &minus;, &times;, and &divide; so it needs to be converted to operations recognized by JavaScript through the use of `map()` method.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 </details>
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Features
+
+- [x] Calculator Section
+- [x] History Section
+- [x] Responsiveness
+- [x] Clickable History List
+- [ ] Error detection in Calculations with appropriate displays
+- [ ] Accumulator type calculator
+- [ ] More operations (Scientific calculator)
+- [ ] Saveable History (using databases)
+- [ ] Rework responsive for calculator section
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Conclusion
+
+The simple calculator is a good way to showcase the ability and mastery of `HTML`, `CSS`, and `JavaScript`. This project is now functional but there are still a few kinks.
+
+In my opinion, I think I need to improve my coding ability by taking advantage of **semantic html** as it was not heavily taken advantage of in this project. I also think there are simpler ways to execute the webpage which I might do in the future. 
+
+CSS styling was also a bit tricky here specially the alignment of elements as I was still not quite familiar with *flex* and *grid* displays that much. Nevertheless, alignments were solved but still proved to be quite the challenge.
+
+The use of other tools like frameworks or libraries are also possible in the future.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
